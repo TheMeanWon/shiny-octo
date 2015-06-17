@@ -1,0 +1,64 @@
+<section class="labpage">
+	<div class="container">
+<p><h1>Count is: {{ count }}</h1></p>
+</div>
+	<div class="container">
+	<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" 
+	 xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 x="0px" 
+	 y="0px"
+	 viewBox="0 0 520 200"
+	 enable-background="new 0 0 520 200" 
+	 xml:space="preserve">
+		
+		<script type="text/javascript">
+   function changerect(evt) {
+        var svgobj=evt.target;
+        svgobj.style.opacity= 0.3;
+        svgobj.setAttribute ('x', 300);
+    }
+</script>
+		
+		<g ng-repeat="item in lab" id="{{item.number}}">
+<!--
+						<title>- Lab bench Info - 
+Bench/Rack: {{item.number}}
+User Name: {{item.currentUser}}
+Number of platforms: {{item.platCount}}
+						</title>
+-->
+						<rect   
+							  id="{{item.number}}" 
+							  x="{{item.x}}" 
+							  y="{{item.y}}" 
+							  fill="green" 
+							  stroke="#000000" 
+							  stroke-width="0.25" 
+							  stroke-miterlimit="10" 
+							  width="{{item.w}}" 
+							  height="{{item.h}}"
+							  onclick="changerect(evt)"
+							  />
+			
+					</g>		
+
+		
+		
+		</svg>
+	</div>
+<!--
+	<ul class="artistlist" ng-show="query">
+		<li ng-animate="'animate'" class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
+			<a href="#/details/{{artists.indexOf(item)}}">
+				<img ng-src="images/{{item.shortname}}_tn.jpg" alt="Photo of {{item.name}}">
+				<div class="info">
+					<h2>{{item.name}}</h2>
+					<h3>{{item.reknown}}</h3>
+				</div>
+			</a>
+		</li>
+	</ul>
+-->
+	
+</section>
